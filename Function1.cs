@@ -26,8 +26,8 @@ namespace httpTriggerOrderDemo
             dynamic data = JsonConvert.DeserializeObject(requestBody);
 
             StudentXml student=new StudentXml();
-            student.Name= data.Name;
-            student.Age= data.Age;
+            student.Name= data.age;
+            student.Age= data.name;
             student.ClassName= data.ClassName;
             student.DOB= data.DOB;
             
