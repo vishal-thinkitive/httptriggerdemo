@@ -26,12 +26,12 @@ namespace httpTriggerOrderDemo
             dynamic data = JsonConvert.DeserializeObject(requestBody);
 
             StudentXml student=new StudentXml();
-            student.Name= data.age;
-            student.Age= data.name;
-            student.ClassName= data.ClassName;
-            student.DOB= data.DOB;
-            
-            StringBuilder sb=new System.Text.StringBuilder();
+            student.Name = "vishal";
+            student.Age = 55;
+            student.ClassName = "BEIT";
+            student.DOB = "29/06/1999";
+
+            StringBuilder sb =new System.Text.StringBuilder();
             XmlSerializer serializer = new XmlSerializer(typeof(StudentXml)); 
             StringWriter sw=new StringWriter(sb);
             serializer.Serialize(sw, student);
