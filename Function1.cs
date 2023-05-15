@@ -21,7 +21,6 @@ namespace httpTriggerOrderDemo
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
@@ -53,7 +52,6 @@ namespace httpTriggerOrderDemo
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var jsons = JsonConvert.DeserializeObject<Students>(requestBody);
-            log.LogInformation("deserialized object:" + jsons.students.ToString());
             students.Studentxmls = new List<StudentXml>();
 
             foreach(var json in jsons.students)
